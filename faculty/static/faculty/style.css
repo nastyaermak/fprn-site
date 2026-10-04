@@ -174,3 +174,22 @@ a.text-link {
   font: inherit;
   padding: 0.35rem 0.6rem;
 }
+
+.status {
+  display: inline-block;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  padding: 0.15rem 0.7rem;
+}
+
+.status-open {
+  background: #d7f0dd;
+  color: #1d5a32;
+}
+
+.status-closed {
+  background: #f3dede;
+  color: #7a2424;
+}

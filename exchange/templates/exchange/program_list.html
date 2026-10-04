@@ -20,6 +20,11 @@
       <article class="card">
         <p class="code">{{ program.country }}</p>
         <h2>{{ program.university }}</h2>
+        {% if program.is_open %}
+          <p class="status status-open">Прийом триває</p>
+        {% else %}
+          <p class="status status-closed">Прийом завершено</p>
+        {% endif %}
         <p>{{ program.description }}</p>
         <dl class="details-list">
           <dt>Мови навчання</dt>
