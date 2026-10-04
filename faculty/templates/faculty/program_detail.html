@@ -1,0 +1,23 @@
+{% extends "faculty/base.html" %}
+{% block title %}{{ program.name }} | ФПрН НаУКМА{% endblock %}
+{% block content %}
+  <section class="intro">
+    <p class="eyebrow">Спеціальність {{ program.code }}</p>
+    <h1>{{ program.name }}</h1>
+    {{ program.description|linebreaks }}
+  </section>
+  <section class="panel">
+    <dl class="details-list">
+      <dt>Випускова кафедра</dt>
+      <dd><a class="text-link" href="{% url 'faculty:department-detail' program.department.pk %}">{{ program.department.name }}</a></dd>
+      <dt>Координатор набору</dt>
+      <dd>{{ program.coordinator_name }}</dd>
+      <dt>Контакт</dt>
+      <dd>{{ program.coordinator_contact }}</dd>
+    </dl>
+  </section>
+  <section class="panel">
+    <h2>Дисципліни</h2>
+    <p>{{ program.disciplines|linebreaksbr }}</p>
+  </section>
+{% endblock %}

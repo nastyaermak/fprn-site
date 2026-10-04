@@ -1,0 +1,25 @@
+{% extends "faculty/base.html" %}
+{% block title %}Спеціальності | ФПрН НаУКМА{% endblock %}
+{% block content %}
+  <section class="intro">
+    <p class="eyebrow">Освітні програми</p>
+    <h1>Спеціальності</h1>
+  </section>
+  <section class="card-grid">
+    {% for program in programs %}
+      <article class="card">
+        <p class="code">{{ program.code }}</p>
+        <h2><a class="text-link" href="{% url 'faculty:program-detail' program.pk %}">{{ program.name }}</a></h2>
+        <p>{{ program.description|truncatewords:50 }}</p>
+        <dl class="details-list">
+          <dt>Координатор набору</dt>
+          <dd>{{ program.coordinator_name }}</dd>
+          <dt>Контакт</dt>
+          <dd>{{ program.coordinator_contact }}</dd>
+        </dl>
+      </article>
+    {% empty %}
+      <p>Спеціальностей поки не додано.</p>
+    {% endfor %}
+  </section>
+{% endblock %}

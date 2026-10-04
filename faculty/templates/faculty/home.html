@@ -1,0 +1,16 @@
+{% extends "faculty/base.html" %}
+{% block content %}
+  {% if info %}
+    <section class="intro">
+      <p class="eyebrow">НаУКМА</p>
+      <h1>{{ info.name }}</h1>
+      {{ info.description|linebreaks }}
+    </section>
+    <section class="panel">
+      <h2>Контакти</h2>
+      <p>{{ info.contacts|linebreaksbr }}</p>
+    </section>
+  {% else %}
+    <p>Інформацію про факультет ще не додано.</p>
+  {% endif %}
+{% endblock %}

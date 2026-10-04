@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Факультет природничих наук НаУКМА{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'faculty/style.css' %}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell header-inner">
+        <a class="brand" href="{% url 'faculty:home' %}">ФПрН НаУКМА</a>
+        <nav aria-label="Основна навігація">
+          <a href="{% url 'faculty:home' %}">Головна</a>
+          <a href="{% url 'faculty:department-list' %}">Кафедри</a>
+          <a href="{% url 'faculty:program-list' %}">Спеціальності</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="page-shell site-footer">
+      Факультет природничих наук Національного університету «Києво-Могилянська академія»
+    </footer>
+  </body>
+</html>
