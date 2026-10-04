@@ -1,0 +1,26 @@
+{% extends "faculty/base.html" %}
+{% block title %}Програми обміну | ФПрН НаУКМА{% endblock %}
+{% block content %}
+  <section class="intro">
+    <p class="eyebrow">Академічна мобільність</p>
+    <h1>Програми обміну</h1>
+  </section>
+  <section class="card-grid">
+    {% for program in programs %}
+      <article class="card">
+        <h2>{{ program.university }}</h2>
+        <p>{{ program.description }}</p>
+        <dl class="details-list">
+          <dt>Мови навчання</dt>
+          <dd>{{ program.languages }}</dd>
+          <dt>Кількість місць</dt>
+          <dd>{{ program.places }}</dd>
+          <dt>Дедлайн подачі</dt>
+          <dd>{{ program.deadline|date:"d.m.Y" }}</dd>
+        </dl>
+      </article>
+    {% empty %}
+      <p>Програм обміну поки не додано.</p>
+    {% endfor %}
+  </section>
+{% endblock %}
