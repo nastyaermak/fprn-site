@@ -161,3 +161,16 @@ a.text-link {
   font-size: 0.9rem;
   padding: 1.5rem 0 2rem;
 }
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.filter select {
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+}

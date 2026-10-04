@@ -4,10 +4,21 @@
   <section class="intro">
     <p class="eyebrow">Академічна мобільність</p>
     <h1>Програми обміну</h1>
+    <form class="filter" method="get">
+      <label for="country">Країна</label>
+      <select id="country" name="country" onchange="this.form.submit()">
+        <option value="">Усі країни</option>
+        {% for country in countries %}
+          <option value="{{ country }}"{% if country == selected_country %} selected{% endif %}>{{ country }}</option>
+        {% endfor %}
+      </select>
+      <noscript><button type="submit">Показати</button></noscript>
+    </form>
   </section>
   <section class="card-grid">
     {% for program in programs %}
       <article class="card">
+        <p class="code">{{ program.country }}</p>
         <h2>{{ program.university }}</h2>
         <p>{{ program.description }}</p>
         <dl class="details-list">
