@@ -1,0 +1,163 @@
+:root {
+  --text: #1d2a22;
+  --muted: #55665b;
+  --primary: #2f6b45;
+  --on-primary: #ffffff;
+  --accent: #e3efe6;
+  --surface: #ffffff;
+  --border: #cfe0d4;
+  color: var(--text);
+  background: #f5f8f4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand,
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+nav a:hover,
+nav a:focus-visible,
+a.text-link:hover,
+a.text-link:focus-visible {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2.5rem 0;
+}
+
+.intro {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow,
+.code {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0.35rem 0 1rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.4rem 1.2rem rgb(30 60 40 / 8%);
+  padding: 1.35rem;
+}
+
+.panel {
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  margin: 0.3rem 0 0.6rem;
+}
+
+.details-list {
+  margin: 0;
+}
+
+.details-list dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 0.9rem;
+  text-transform: uppercase;
+}
+
+.details-list dd {
+  margin: 0.2rem 0 0;
+}
+
+a.text-link {
+  color: var(--primary);
+}
+
+.teachers {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teachers th,
+.teachers td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.55rem 0.4rem;
+  text-align: left;
+}
+
+.teachers th {
+  background: var(--accent);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1.5rem 0 2rem;
+}
