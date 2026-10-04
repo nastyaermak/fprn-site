@@ -1,6 +1,7 @@
 {% extends "faculty/base.html" %}
 {% block title %}{{ program.name }} | ФПрН НаУКМА{% endblock %}
 {% block content %}
+  <a class="back-link" href="{% url 'faculty:program-list' %}">← Усі спеціальності</a>
   <section class="intro">
     <p class="eyebrow">Спеціальність {{ program.code }}</p>
     <h1>{{ program.name }}</h1>

@@ -193,3 +193,16 @@ a.text-link {
   background: #f3dede;
   color: #7a2424;
 }
+
+.back-link {
+  color: var(--primary);
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  text-decoration: underline;
+}
