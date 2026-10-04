@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Department, FacultyInfo, Program
+from .models import Department, FacultyInfo, Program, ukrainian_sort_key
 
 
 def home(request):
@@ -27,4 +27,9 @@ def department_detail(request, pk):
     department = get_object_or_404(
         Department.objects.prefetch_related("programs", "teachers"), pk=pk
     )
-    return render(request, "faculty/department_detail.html", {"department": department})
+    teachers = sorted(department.teachers.all(), key=lambda teacher: ukrainian_sort_key(teacher.name))
+    return render(
+        request,
+        "faculty/department_detail.html",
+        {"department": department, "teachers": teachers},
+    )
