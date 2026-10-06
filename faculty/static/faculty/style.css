@@ -206,3 +206,36 @@ a.text-link {
 .back-link:focus-visible {
   text-decoration: underline;
 }
+
+.hero {
+  align-items: center;
+  background: linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)), url("img/naukma-aerial.jpg") center / cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  margin: 0 0 2rem;
+  text-shadow: 0 0.15rem 0.6rem rgb(0 0 0 / 40%);
+}
+
+.hero-button {
+  border: 1.5px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.8rem;
+  text-decoration: none;
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+  background: #ffffff;
+  color: var(--primary);
+}

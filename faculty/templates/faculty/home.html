@@ -1,4 +1,12 @@
 {% extends "faculty/base.html" %}
+{% block hero %}
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Факультет природничих наук<br>чекає на тебе!</h1>
+      <a class="hero-button" href="{% url 'faculty:program-list' %}">Спеціальності</a>
+    </div>
+  </section>
+{% endblock %}
 {% block content %}
   {% if info %}
     <section class="intro">
