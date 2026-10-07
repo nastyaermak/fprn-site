@@ -1,7 +1,7 @@
 {% extends "faculty/base.html" %}
 {% block title %}{{ department.name }} | ФПрН НаУКМА{% endblock %}
 {% block content %}
-  <a class="back-link" href="{% url 'faculty:department-list' %}">← Усі кафедри</a>
+  <a class="back-link" href="{% url 'faculty:department-list' %}">Усі кафедри</a>
   <section class="intro">
     <p class="eyebrow">Кафедра</p>
     <h1>{{ department.name }}</h1>
