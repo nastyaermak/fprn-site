@@ -4,7 +4,7 @@ UKRAINIAN_ALPHABET = "абвгґдеєжзиіїйклмнопрстуфхцчш
 
 
 def ukrainian_sort_key(text):
-    # SQLite сортує за кодами Unicode, де «Є» та «І» стоять перед «А»
+    # sqlite сортує по кодах unicode, тому Є та І були вище за А
     return [UKRAINIAN_ALPHABET.find(char) if char in UKRAINIAN_ALPHABET else ord(char) for char in text.lower()]
 
 

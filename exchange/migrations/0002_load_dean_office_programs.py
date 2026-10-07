@@ -25,8 +25,7 @@ INSERT INTO exchange_exchangeprogram (university, languages, places, deadline, d
  'Другий за величиною університет Чехії, розташований у Брно. Природничий факультет пропонує англомовні курси для студентів програм обміну.');
 """
 
-# Видаляємо за назвою, а не за повним рядком: після відкату 0003 країна
-# приєднується вже через кому, тож формат може відрізнятися від початкового.
+# видаляю по початку назви, бо після відкату 0003 країна вже записана через кому
 DELETE_SQL = "DELETE FROM exchange_exchangeprogram WHERE {};".format(
     " OR ".join("university LIKE '{}%'".format(name) for name in UNIVERSITY_NAMES)
 )

@@ -2,7 +2,7 @@ import re
 
 from django.db import migrations, models
 
-# "Назва, Країна", "Назва (Країна)" або "Назва - Країна"
+# у таблиці країна записана так: "Назва, Країна", "Назва (Країна)", "Назва - Країна"
 UNIVERSITY_PATTERN = re.compile(r"^(?P<name>.+?)\s*(?:,|\(|\s-\s)\s*(?P<country>[^()]+?)\)?\s*$")
 
 
