@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Факультет природничих наук НаУКМА{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'faculty/style.css' %}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell header-inner">
+        <a class="brand" href="{% url 'faculty:home' %}">ФПрН НаУКМА</a>
+        <nav aria-label="Основна навігація">
+          <a href="{% url 'faculty:home' %}">Головна</a>
+          <a href="{% url 'faculty:department-list' %}">Кафедри</a>
+          <a href="{% url 'faculty:program-list' %}">Спеціальності</a>
+          <a href="{% url 'exchange:program-list' %}">Обмін</a>
+        </nav>
+      </div>
+    </header>
+    {% block hero %}{% endblock %}
+    <main class="page-shell">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div class="page-shell footer-grid">
+        <div>
+          <h2>Напишіть нам</h2>
+          <p>Деканат: (044) 425 60 57</p>
+          <p>Провідні спеціалісти: (044) 425 60 71</p>
+        </div>
+        <div>
+          <h2>Адреса</h2>
+          <p>вул. Г. Сковороди, 2<br>корпус 3, кімн. 216</p>
+        </div>
+        <nav class="footer-links" aria-label="Посилання у футері">
+          <a href="{% url 'faculty:home' %}">Головна</a>
+          <a href="{% url 'faculty:department-list' %}">Кафедри</a>
+          <a href="{% url 'faculty:program-list' %}">Спеціальності</a>
+          <a href="{% url 'exchange:program-list' %}">Обмін</a>
+        </nav>
+      </div>
+      <p class="page-shell footer-note">
+        Факультет природничих наук НаУКМА.
+        Фото: Iurii Panin, <a href="https://commons.wikimedia.org/wiki/File:Old_academic_building_-_Kyiv-Mohyla_Academy_-_Aerial_view_-_1.jpg">Wikimedia Commons</a>, CC BY-SA 4.0.
+      </p>
+    </footer>
+  </body>
+</html>

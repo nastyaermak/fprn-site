@@ -1,0 +1,29 @@
+{% extends "faculty/base.html" %}
+{% block title %}Кафедри | ФПрН НаУКМА{% endblock %}
+{% block content %}
+  <section class="intro">
+    <p class="eyebrow">Структура факультету</p>
+    <h1>Кафедри</h1>
+  </section>
+  <section class="card-grid">
+    {% for department in departments %}
+      <article class="card">
+        <h2><a class="text-link" href="{% url 'faculty:department-detail' department.pk %}">{{ department.name }}</a></h2>
+        <dl class="details-list">
+          <dt>Завідувач кафедри</dt>
+          <dd>{{ department.head }}</dd>
+          <dt>Випускова для спеціальностей</dt>
+          <dd>
+            {% for program in department.programs.all %}
+              <a class="text-link" href="{% url 'faculty:program-detail' program.pk %}">{{ program.code }} {{ program.name }}</a>{% if not forloop.last %}, {% endif %}
+            {% empty %}
+              —
+            {% endfor %}
+          </dd>
+        </dl>
+      </article>
+    {% empty %}
+      <p>Кафедр поки не додано.</p>
+    {% endfor %}
+  </section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "faculty/base.html" %}
+{% block title %}Програми обміну | ФПрН НаУКМА{% endblock %}
+{% block content %}
+  <section class="intro">
+    <p class="eyebrow">Академічна мобільність</p>
+    <h1>Програми обміну</h1>
+    <form class="filter" method="get">
+      <label for="country">Країна</label>
+      <select id="country" name="country" onchange="this.form.submit()">
+        <option value="">Усі країни</option>
+        {% for country in countries %}
+          <option value="{{ country }}"{% if country == selected_country %} selected{% endif %}>{{ country }}</option>
+        {% endfor %}
+      </select>
+      <noscript><button type="submit">Показати</button></noscript>
+    </form>
+  </section>
+  <section class="card-grid">
+    {% for program in programs %}
+      <article class="card">
+        <p class="code">{{ program.country }}</p>
+        <h2>{{ program.university }}</h2>
+        {% if program.is_open %}
+          <p class="status status-open">Прийом триває</p>
+        {% else %}
+          <p class="status status-closed">Прийом завершено</p>
+        {% endif %}
+        <p>{{ program.description }}</p>
+        <dl class="details-list">
+          <dt>Мови навчання</dt>
+          <dd>{{ program.languages }}</dd>
+          <dt>Кількість місць</dt>
+          <dd>{{ program.places }}</dd>
+          <dt>Дедлайн подачі</dt>
+          <dd>{{ program.deadline|date:"d.m.Y" }}</dd>
+        </dl>
+      </article>
+    {% empty %}
+      <p>Програм обміну поки не додано.</p>
+    {% endfor %}
+  </section>
+{% endblock %}
